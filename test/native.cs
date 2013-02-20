@@ -16,12 +16,12 @@ namespace Benchmark {
     [DllImport("native", CallingConvention = CallingConvention.Cdecl)]
     public static extern void remove(IntPtr index);
     [DllImport("native", CallingConvention = CallingConvention.Cdecl)]
-    public static extern int get_size(IntPtr index);
+    public static extern IntPtr get_size(IntPtr index);
 
     // Synchronous marshal-all-the-bytes-methods
     [DllImport("native", CallingConvention = CallingConvention.Cdecl)]
     public static extern void put(IntPtr index, byte[] data, IntPtr size);
     [DllImport("native", CallingConvention = CallingConvention.Cdecl)]
-    public static extern void get(IntPtr index, byte[] output, int offset, int amount);
+    public static extern void get(IntPtr index, byte[] output, IntPtr offset, IntPtr amount);
   }
 }

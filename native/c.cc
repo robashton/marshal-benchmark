@@ -28,6 +28,7 @@ extern "C" {
   // Common
   void remove(int index) {
     delete[] _data[index];
+    _sizes[index] = 0;
   }
   int get_size(int index) {
     return _sizes[index];
@@ -36,6 +37,7 @@ extern "C" {
   // Syncrhonous, marshal-all-the-bytes methods
   void put(int index, const char* data, int size) {
     _data[index] = new char[size];
+    _sizes[index] = size;
     memcpy(_data[index], data, size);
   }
 
