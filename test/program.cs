@@ -8,10 +8,6 @@ namespace Benchmark {
   public static class Program {
 
     public static void Main(string[] args) {
-      Environment.SetEnvironmentVariable("PATH", 
-          Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "/");
-
-      Console.WriteLine(Environment.GetEnvironmentVariable("PATH"));
       var count = 20;
       using(var db = new Db(count)) {
         Populate(db, count);
